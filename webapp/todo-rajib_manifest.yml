@@ -1,9 +1,8 @@
 applications:
 - name: todo-rajib
-  command: python todo_app.py
   disk_quota: 1G
   instances: 1
-  memory: 1G
+  memory: 128M
   routes:
-  - route: todo-rajib.cfapps.io
+  - route: todo-rajib-boring-possum.cfapps.io
   stack: cflinuxfs2
