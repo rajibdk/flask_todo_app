@@ -1,9 +1,10 @@
 from flask import Flask, request, render_template, url_for, redirect
 from todo import Todo
+import os
 
 app = Flask(__name__)
 todos = []
-
+port = int(os.getenv('PORT', '3000'))
 
 @app.route("/", methods=["GET", "POST"])
 def todos_page():
@@ -45,4 +46,4 @@ def todos_delete(todo_id):
     return render_template("index.html", todos=todos)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=port)
