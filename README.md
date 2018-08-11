@@ -1,4 +1,4 @@
-# todo sample app basedon Flask
+# todo sample app based on Flask
 
 ## to push the app to pivotal cloud foundry
 1. cd webapp
