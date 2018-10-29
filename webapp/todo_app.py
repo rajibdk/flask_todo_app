@@ -1,9 +1,10 @@
-from flask import Flask, request, render_template, url_for, redirect
+from flask import request, render_template, url_for, redirect
 from settings import app
 from model import Todo
 import os
 
 port = int(os.getenv('PORT', '3000'))
+
 
 @app.route("/", methods=["GET", "POST"])
 def todos_page():
@@ -18,7 +19,7 @@ def todos_page():
         else:
             Todo.add_todo(_id=todo_id, _title=title, _details=details)
         return redirect(url_for("todos_page"))
-    
+
     todos = Todo.get_all_todos()
     return render_template("index.html", todos=todos)
 
